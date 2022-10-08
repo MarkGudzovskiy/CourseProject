@@ -26,11 +26,12 @@ public class QuotesController {
     private TableColumn<?, ?> TeacherColumn;
 
     @FXML
-    void identify(){
+    void initialize(){
         BackButton.setOnAction(actionEvent -> {
             BackButton.getScene().getWindow().hide();
             App.changeScene("MenuWindow.fxml");
         });
+
     }
 
 }
