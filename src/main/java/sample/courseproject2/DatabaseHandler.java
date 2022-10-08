@@ -4,7 +4,8 @@ import java.sql.*;
 
 public class DatabaseHandler {
 
-    public static Connection getConnection() {
+//    Connection connection = null;
+    public Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -14,22 +15,25 @@ public class DatabaseHandler {
         }
         return connection;
     }
-    public void LogInUser(){
+    public void LogInUser(String login, String password){
 
     }
 
     public void SignUpUser(String login,String password,String claster){
         String insert = "INSERT INTO `users`(`Login`, `Password`, `claster`) VALUES (?,?,?)";
         try {
-        PreparedStatement prSt = getConnection().prepareStatement(insert);
+            Connection connection = getConnection();
+        PreparedStatement prSt = connection.prepareStatement(insert);
 
         prSt.setString(1, login);
         prSt.setString(2, password);
         prSt.setString(3, claster);
 
         prSt.executeUpdate();
+        connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 }

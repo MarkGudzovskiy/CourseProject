@@ -30,21 +30,13 @@ public class LogInController {
         SignUpButton.setOnAction( actionEvent ->{
             SignUpButton.getScene().getWindow().hide();
             System.out.println(1);
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("SignUpWindow.fxml"));
+            App.changeScene("SignUpWindow.fxml");
 
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
         });
 
-//        LogInButton.setOnAction(actionEvent -> );
+        LogInButton.setOnAction(actionEvent -> {
+
+        });
 
     }
 }
