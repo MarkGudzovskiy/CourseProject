@@ -27,16 +27,17 @@ public class LogInController {
 
     @FXML
     void initialize() {
+        LogInButton.setOnAction(actionEvent -> {
+            SignUpButton.getScene().getWindow().hide();
+            App.changeScene("MenuWindow.fxml");
+        });
+
         SignUpButton.setOnAction( actionEvent ->{
             SignUpButton.getScene().getWindow().hide();
-            System.out.println(1);
             App.changeScene("SignUpWindow.fxml");
 
         });
 
-        LogInButton.setOnAction(actionEvent -> {
-
-        });
 
     }
 }
