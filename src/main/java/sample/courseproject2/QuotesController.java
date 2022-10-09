@@ -62,6 +62,7 @@ public class QuotesController {
             String query = "SELECT * FROM quotes";
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
+
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
 //                String id = Integer.toString(idt);

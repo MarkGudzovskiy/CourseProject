@@ -57,8 +57,8 @@ public class DatabaseHandler {
         }
     }
 
-    public void AddQuote(String Quote,String Teacher,String lesson,String date ){
-        String insert = "INSERT INTO `quotes`(`quote`, `teacher_name`, `lesson`, `date`) VALUES (?,?,?,?)";
+    public void AddQuote(String Quote,String Teacher,String lesson,String date,int id, String claster){
+        String insert = "INSERT INTO `quotes`(`quote`, `teacher_name`, `lesson`, `date`, id_user, user_claster, study_group) VALUES (?,?,?,?,?,?,?)";
         try {
             Connection connection = getConnection();
             PreparedStatement prSt = connection.prepareStatement(insert);
@@ -67,6 +67,9 @@ public class DatabaseHandler {
             prSt.setString(2, Teacher);
             prSt.setString(3, lesson);
             prSt.setString(4, date);
+            prSt.setInt(5,id);
+            prSt.setString(6,claster);
+            prSt.setString(7,UserData.user.getGroup());
             prSt.executeUpdate();
             connection.close();
         } catch (SQLException e) {
@@ -74,12 +77,23 @@ public class DatabaseHandler {
         }
     }
     public void UpdateQuote(int id, String Quote,String Teacher,String lesson,String date ){
-        String insert = "UPDATE `quotes` SET `quote`= ? ,`teacher_name`= ? ,`lesson`= ? ,`date`= ? WHERE id = ?";
         try {
-
             Connection connection = getConnection();
 
-            PreparedStatement prSt = connection.prepareStatement(insert);
+            PreparedStatement prSt = null;
+            String insert;
+            if(UserData.user.getClaster().equals("admin")){
+                insert = "UPDATE `quotes` SET `quote`= ? ,`teacher_name`= ? ,`lesson`= ? ,`date`= ? WHERE id = ?";
+                prSt = connection.prepareStatement(insert);
+            } else if(UserData.user.getClaster().equals("student")) {
+                insert = "UPDATE `quotes` SET `quote`= ? ,`teacher_name`= ? ,`lesson`= ? ,`date`= ? WHERE id = ? and id_user = ?";
+                prSt = connection.prepareStatement(insert);
+                prSt.setInt(6, UserData.user.getId());
+            } else if(UserData.user.getClaster().equals("starosta")) {
+                insert = "UPDATE `quotes` SET `quote`= ? ,`teacher_name`= ? ,`lesson`= ? ,`date`= ? WHERE id = ? and study_group = ?";
+                prSt = connection.prepareStatement(insert);
+                prSt.setString(6, UserData.user.getGroup());
+            }
 
             prSt.setString(1, Quote);
             prSt.setString(2, Teacher);
@@ -93,6 +107,7 @@ public class DatabaseHandler {
         }
     }
     public void UpdateData(String login,String pass,String newlogin,String newpass,String newclaster){
+
         String insert = "UPDATE `users` SET `Login`= ? ,`Password`= ? ,`Claster`= ?  WHERE Login = ? and Password = ?";
         try {
 
@@ -114,12 +129,25 @@ public class DatabaseHandler {
     public void DeleteQuote(int id){
         String del = "DELETE FROM `quotes` WHERE id = ?;";
         try {
-
             Connection connection = getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(del);
 
-            preparedStatement.setInt(1, id);
-            preparedStatement.executeUpdate();
+            PreparedStatement prSt = null;
+            String insert;
+            if(UserData.user.getClaster().equals("admin")){
+                insert ="DELETE FROM `quotes` WHERE id = ?;";
+                prSt = connection.prepareStatement(insert);
+            } else if(UserData.user.getClaster().equals("student")) {
+                insert ="DELETE FROM `quotes` WHERE id = ? and id_user = ?;";
+                prSt = connection.prepareStatement(insert);
+                prSt.setInt(2, UserData.user.getId());
+            } else if(UserData.user.getClaster().equals("starosta")) {
+                insert = "DELETE FROM `quotes` WHERE id = ? and user_group = ?;";
+                prSt = connection.prepareStatement(insert);
+                prSt.setString(2, UserData.user.getGroup());
+            }
+
+            prSt.setInt(1, id);
+            prSt.executeUpdate();
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();

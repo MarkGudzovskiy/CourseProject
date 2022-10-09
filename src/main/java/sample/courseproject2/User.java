@@ -13,6 +13,7 @@ public class User {
         this.login = login;
         this.password = password;
         this.claster = claster;
+        this.group = group;
     }
 
     public String getGroup() {

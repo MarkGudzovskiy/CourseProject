@@ -29,7 +29,7 @@ public class AddQuotesController {
     void initialize(){
         DatabaseHandler db = new DatabaseHandler();
         AddQuotesButton.setOnAction(actionEvent -> {
-            db.AddQuote(QuoteField.getText(),TeacherFIeld.getText(),LessonField.getText(),DataField.getText());
+            db.AddQuote(QuoteField.getText(),TeacherFIeld.getText(),LessonField.getText(),DataField.getText(),UserData.user.getId(),UserData.user.getClaster());
         });
         BackButton.setOnAction(actionEvent -> {
             App.changeScene("MenuWindow.fxml");
