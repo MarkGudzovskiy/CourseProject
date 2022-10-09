@@ -72,5 +72,43 @@ public class DatabaseHandler {
             e.printStackTrace();
         }
     }
+    public void UpdateQuote(int id, String Quote,String Teacher,String lesson,String date ){
+        String insert = "UPDATE `quotes` SET `quote`= ? ,`teacher_name`= ? ,`lesson`= ? ,`date`= ? WHERE id = ?";
+        try {
+
+            Connection connection = getConnection();
+
+            PreparedStatement prSt = connection.prepareStatement(insert);
+
+            prSt.setString(1, Quote);
+            prSt.setString(2, Teacher);
+            prSt.setString(3, lesson);
+            prSt.setString(4, date);
+            prSt.setInt(5,id);
+            prSt.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void UpdateData(String login,String pass,String newlogin,String newpass,String newclaster){
+        String insert = "UPDATE `users` SET `Login`= ? ,`Password`= ? ,`Claster`= ?  WHERE Login = ? and Password = ?";
+        try {
+
+            Connection connection = getConnection();
+
+            PreparedStatement prSt = connection.prepareStatement(insert);
+
+            prSt.setString(1, newlogin);
+            prSt.setString(2, newpass);
+            prSt.setString(3, newclaster);
+            prSt.setString(4, login);
+            prSt.setString(5,pass);
+            prSt.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

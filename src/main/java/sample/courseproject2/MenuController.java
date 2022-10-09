@@ -28,18 +28,14 @@ public class MenuController {
         App.changeScene("QuotesWindow.fxml");
     }
 
-//    @FXML
-//    void initialize(){
-//        QuotesButton.setOnAction(actionEvent -> {
-//            System.out.println(1);
-////            QuotesButton.getScene().getWindow().hide();
-//            App.changeScene("QuotesWindow.fxml");
-//        });
-//
-//        AddQuotesButton.setOnAction(actionEvent -> {
-////            AddQuotesButton.getScene().getWindow().hide();
-//            App.changeScene("AddQuotesWindow.fxml");
-//        });
-//    }
+    @FXML
+    void initialize(){
+        UpdateQuotesButton.setOnAction(actionEvent -> {
+            App.changeScene("UpdateQuoteWindow.fxml");
+        });
+        UpdateData.setOnAction(actionEvent -> {
+            App.changeScene("UpdateData.fxml");
+        });
+    }
 
 }

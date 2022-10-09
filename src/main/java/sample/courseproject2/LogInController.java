@@ -14,6 +14,9 @@ import java.io.IOException;
 public class LogInController {
 
     @FXML
+    private Button LogInButton1;
+
+    @FXML
     private TextField LogField;
 
     @FXML
@@ -36,6 +39,10 @@ public class LogInController {
             }
 
 
+        });
+
+        LogInButton1.setOnAction(actionEvent -> {
+            App.changeScene("QuotesWindow.fxml");
         });
 
         SignUpButton.setOnAction( actionEvent ->{

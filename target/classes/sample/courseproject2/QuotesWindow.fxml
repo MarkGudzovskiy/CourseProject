@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -14,13 +13,13 @@
             <children>
             <TableView fx:id="QuotesTable" layoutY="41.0" prefHeight="273.0" prefWidth="702.0">
               <columns>
-                <TableColumn fx:id="QuoteColumn" prefWidth="391.19999998807907" text="Quote" />
-                  <TableColumn fx:id="TeacherColumn" prefWidth="147.20001220703125" text="Teacher" />
-                  <TableColumn fx:id="LessonColumn" prefWidth="86.13330078125" text="Lesson" />
-                  <TableColumn fx:id="DateColumn" prefWidth="80.2666015625" text="Date" />
+                  <TableColumn fx:id="IDcolumn" prefWidth="21.599974811077118" text="id" />
+                <TableColumn fx:id="QuoteColumn" prefWidth="398.3999824523926" text="Quote" />
+                  <TableColumn fx:id="TeacherColumn" prefWidth="139.20001220703125" text="Teacher" />
+                  <TableColumn fx:id="LessonColumn" prefWidth="81.5999755859375" text="Lesson" />
+                  <TableColumn fx:id="DateColumn" prefWidth="60.800048828125" text="Date" />
               </columns>
             </TableView>
-            <TextField fx:id="txt" layoutX="147.0" layoutY="14.0" />
             </children>
         </AnchorPane>
         <Label layoutX="177.0" layoutY="4.0" text="Mospolytech quotes" textFill="WHITE">
