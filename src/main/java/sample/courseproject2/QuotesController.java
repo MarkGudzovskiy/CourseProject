@@ -44,7 +44,12 @@ public class QuotesController {
     @FXML
     void initialize(){
         BackButton.setOnAction(actionEvent -> {
-            App.changeScene("MenuWindow.fxml");
+            if(!UserData.user.getClaster().equals("Guest")){
+                App.changeScene("MenuWindow.fxml");
+            } else {
+                App.changeScene("LogInWindow.fxml");
+            }
+
         });
         ReturnQuotes();
     }

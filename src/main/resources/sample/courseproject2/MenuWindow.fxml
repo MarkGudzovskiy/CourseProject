@@ -9,27 +9,32 @@
     <children>
         <AnchorPane layoutY="85.0" prefHeight="314.0" prefWidth="700.0" style="-fx-background-color: e3b5b1;">
             <children>
-                <Button fx:id="QuotesButton" layoutX="273.0" layoutY="103.0" mnemonicParsing="false" onAction="#Quotes" prefHeight="34.0" prefWidth="146.0" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Записи" textFill="WHITE">
+                <Button fx:id="QuotesButton" layoutX="277.0" layoutY="75.0" mnemonicParsing="false" onAction="#Quotes" prefHeight="34.0" prefWidth="146.0" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Записи" textFill="WHITE">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </Button>
-            <Button fx:id="AddQuotesButton" layoutX="273.0" layoutY="149.0" mnemonicParsing="false" onAction="#AddQuotes" prefHeight="34.0" prefWidth="146.0" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Добавить запись" textFill="WHITE">
+            <Button fx:id="AddQuotesButton" layoutX="277.0" layoutY="116.0" mnemonicParsing="false" onAction="#AddQuotes" prefHeight="34.0" prefWidth="146.0" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Добавить запись" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="UpdateQuotesButton" layoutX="273.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="146.0" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Изменить запись" textFill="WHITE">
+            <Button fx:id="UpdateQuotesButton" layoutX="277.0" layoutY="157.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="146.0" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Изменить запись" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Label layoutX="177.0" layoutY="14.0" text="            Menu" textFill="WHITE">
+            <Label layoutX="177.0" text="            Menu" textFill="WHITE">
                <font>
                   <Font name="Dubai Regular" size="42.0" />
                </font>
             </Label>
-            <Button fx:id="UpdateData" layoutX="273.0" layoutY="237.0" mnemonicParsing="false" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Обновить данные" textFill="WHITE">
+            <Button fx:id="UpdateData" layoutX="277.0" layoutY="199.0" mnemonicParsing="false" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Обновить данные" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="UpdateQuotesButton1" layoutX="277.0" layoutY="242.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="146.0" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Удалить запись" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>

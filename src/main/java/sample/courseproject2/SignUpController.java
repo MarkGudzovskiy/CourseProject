@@ -11,6 +11,9 @@ public class SignUpController {
     private TextField ClasterField;
 
     @FXML
+    private TextField ClasterField1;
+
+    @FXML
     private TextField LogField;
 
     @FXML
@@ -24,7 +27,8 @@ public class SignUpController {
         DatabaseHandler dbHandler = new DatabaseHandler();
 
         RegButton.setOnAction(actionEvent -> {
-            dbHandler.SignUpUser(LogField.getText(),PassField.getText(),ClasterField.getText());
+            dbHandler.SignUpUser(LogField.getText(),PassField.getText(),ClasterField.getText(),ClasterField1.getText());
+            App.changeScene("LogInWindow.fxml");
         });
     }
 }

@@ -6,12 +6,21 @@ public class User {
     private String login;
     private String password;
     private String claster;
+    private String group;
 
-    public User(int id,String login, String password, String claster) {
+    public User(int id,String login, String password, String claster, String group) {
         this.id = id;
         this.login = login;
         this.password = password;
         this.claster = claster;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
     }
 
     public int getId() {

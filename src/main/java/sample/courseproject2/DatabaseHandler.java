@@ -27,7 +27,7 @@ public class DatabaseHandler {
 
             ResultSet result = statement.executeQuery();
             if (result.next()) {
-                UserData.user = new User(result.getInt("id"), login, password, result.getString("claster"));
+                UserData.user = new User(result.getInt("id"), login, password, result.getString("claster"),result.getString("study_group"));
                 App.changeScene("MenuWindow.fxml");
             } else {
                 System.out.println("Пользователя не существует");
@@ -39,8 +39,8 @@ public class DatabaseHandler {
     }
 
 
-    public void SignUpUser(String login,String password,String claster){
-        String insert = "INSERT INTO `users`(`Login`, `Password`, `claster`) VALUES (?,?,?)";
+    public void SignUpUser(String login,String password,String claster, String group){
+        String insert = "INSERT INTO `users`(`Login`, `Password`, `claster`, study_group) VALUES (?,?,?,?)";
         try {
             Connection connection = getConnection();
         PreparedStatement prSt = connection.prepareStatement(insert);
@@ -48,6 +48,7 @@ public class DatabaseHandler {
         prSt.setString(1, login);
         prSt.setString(2, password);
         prSt.setString(3, claster);
+        prSt.setString(4,group);
 
         prSt.executeUpdate();
         connection.close();
@@ -107,6 +108,20 @@ public class DatabaseHandler {
             prSt.executeUpdate();
             connection.close();
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void DeleteQuote(int id){
+        String del = "DELETE FROM `quotes` WHERE id = ?;";
+        try {
+
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(del);
+
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            connection.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

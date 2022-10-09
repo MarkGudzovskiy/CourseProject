@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: af4035;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.courseproject2.DeleneQuoteController">
+    <children>
+        <AnchorPane layoutY="87.0" prefHeight="314.0" prefWidth="700.0" style="-fx-background-color: e3b5b1;">
+            <children>
+                <TextField fx:id="LogField" layoutX="276.0" layoutY="83.0" promptText="Id" style="-fx-background-color: FAFAFA; -fx-border-color: af4035; -fx-border-radius: 10; -fx-background-radius: 10;" />
+                <Button fx:id="LogInButton" layoutX="318.0" layoutY="140.0" mnemonicParsing="false" style="-fx-border-color: af4035; -fx-background-color: e3b5b1; -fx-border-radius: 10; -fx-background-radius: 10;" text="Удалить" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Label layoutX="190.0" layoutY="33.0" text="Введите номер записи которую хотите удалить" textFill="WHITE">
+                    <font>
+                        <Font name="Dubai Regular" size="15.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="177.0" layoutY="4.0" text="Mospolytech quotes" textFill="WHITE">
+            <font>
+                <Font name="Dubai Regular" size="42.0" />
+            </font>
+        </Label>
+        <Button fx:id="SignUpButton" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" style="-fx-background-color: af4035; -fx-border-color: e3b5b1; -fx-border-radius: 10;" text="Назад" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

@@ -10,6 +10,9 @@ public class MenuController {
     private Button AddQuotesButton;
 
     @FXML
+    private Button UpdateQuotesButton1;
+
+    @FXML
     private Button QuotesButton;
 
     @FXML
@@ -35,6 +38,9 @@ public class MenuController {
         });
         UpdateData.setOnAction(actionEvent -> {
             App.changeScene("UpdateData.fxml");
+        });
+        UpdateQuotesButton1.setOnAction(actionEvent -> {
+            App.changeScene("DeleteQuote.fxml");
         });
     }
 

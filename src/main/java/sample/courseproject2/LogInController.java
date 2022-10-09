@@ -43,6 +43,7 @@ public class LogInController {
 
         LogInButton1.setOnAction(actionEvent -> {
             App.changeScene("QuotesWindow.fxml");
+            UserData.user = new User(0,"","","Guest","");
         });
 
         SignUpButton.setOnAction( actionEvent ->{
