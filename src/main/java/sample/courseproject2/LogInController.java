@@ -27,13 +27,18 @@ public class LogInController {
 
     @FXML
     void initialize() {
+        DatabaseHandler db = new DatabaseHandler();
         LogInButton.setOnAction(actionEvent -> {
-//            LogInButton.getScene().getWindow().hide();
-            App.changeScene("MenuWindow.fxml");
+            String login = LogField.getText();
+            String pass = PassField.getText();
+            if(!LogField.getText().isEmpty() && !PassField.getText().isEmpty()){
+                db.LogInUser(login,pass);
+            }
+
+
         });
 
         SignUpButton.setOnAction( actionEvent ->{
-//            SignUpButton.getScene().getWindow().hide();
             App.changeScene("SignUpWindow.fxml");
         });
 

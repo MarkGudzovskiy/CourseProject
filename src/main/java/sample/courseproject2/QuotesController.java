@@ -37,7 +37,6 @@ public class QuotesController {
     @FXML
     void initialize(){
         BackButton.setOnAction(actionEvent -> {
-//            BackButton.getScene().getWindow().hide();
             App.changeScene("MenuWindow.fxml");
         });
 

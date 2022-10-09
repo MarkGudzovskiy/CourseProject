@@ -2,23 +2,37 @@ package sample.courseproject2;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class AddQuotesController {
 
     @FXML
+    private Button BackButton;
+
+    @FXML
     private Button AddQuotesButton;
 
     @FXML
-    private Button QuotesButton;
+    private TextField DataField;
 
     @FXML
-    private Button UpdateData;
+    private TextField LessonField;
 
     @FXML
-    private Button UpdateQuotesButton;
+    private TextArea QuoteField;
 
     @FXML
-    private TextField txt;
+    private TextField TeacherFIeld;
 
+    @FXML
+    void initialize(){
+        DatabaseHandler db = new DatabaseHandler();
+        AddQuotesButton.setOnAction(actionEvent -> {
+            db.AddQuote(QuoteField.getText(),TeacherFIeld.getText(),LessonField.getText(),DataField.getText());
+        });
+        BackButton.setOnAction(actionEvent -> {
+            App.changeScene("MenuWindow.fxml");
+        });
+    }
 }

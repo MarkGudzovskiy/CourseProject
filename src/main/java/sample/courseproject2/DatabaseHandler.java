@@ -16,8 +16,28 @@ public class DatabaseHandler {
         return connection;
     }
     public void LogInUser(String login, String password){
+        try {
+            Connection connection = getConnection();
 
+            String query = "SELECT * FROM users WHERE Login = ? AND Password = ?;";
+            PreparedStatement statement = connection.prepareStatement(query);
+
+            statement.setString(1, login);
+            statement.setString(2, password);
+
+            ResultSet result = statement.executeQuery();
+            if (result.next()) {
+                UserData.user = new User(result.getInt("id"), login, password, result.getString("claster"));
+                App.changeScene("MenuWindow.fxml");
+            } else {
+                System.out.println("Пользователя не существует");
+            }
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
 
     public void SignUpUser(String login,String password,String claster){
         String insert = "INSERT INTO `users`(`Login`, `Password`, `claster`) VALUES (?,?,?)";
