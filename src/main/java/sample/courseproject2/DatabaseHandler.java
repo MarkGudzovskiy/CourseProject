@@ -154,4 +154,7 @@ public class DatabaseHandler {
         }
     }
 
+    public void countQuotes(){
+
+    }
 }
