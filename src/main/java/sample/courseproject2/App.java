@@ -9,9 +9,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class App extends Application {
+    private static Stage stg;
     @Override
     public void start(Stage stage) throws IOException {
-
+        stg = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("LogInWindow.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 400);
         stage.setTitle("Quotes");
@@ -19,19 +20,30 @@ public class App extends Application {
         stage.show();
     }
 
+//    public static Object changeScene(String fxml) {
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(App.class.getResource(fxml));
+//
+//        try {
+//            loader.load();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        Parent root = loader.getRoot();
+//        Stage stage = new Stage();
+//        stage.setScene(new Scene(root));
+//        stage.showAndWait();
+//        return null;
+//    }
     public static Object changeScene(String fxml) {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(App.class.getResource(fxml));
-
         try {
-            loader.load();
-        } catch (IOException e) {
+            FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml));
+            Parent pane = loader.load();
+            stg.setScene(new Scene(pane));
+            return loader.getController();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
         return null;
     }
 

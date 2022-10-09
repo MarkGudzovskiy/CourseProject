@@ -4,12 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: af4035;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.courseproject2.QuotesController">
     <children>
-        <AnchorPane layoutY="87.0" prefHeight="314.0" prefWidth="700.0" style="-fx-background-color: e3b5b1;">
+        <AnchorPane fx:id="Text" layoutY="87.0" prefHeight="314.0" prefWidth="700.0" style="-fx-background-color: e3b5b1;">
             <children>
             <TableView fx:id="QuotesTable" layoutY="41.0" prefHeight="273.0" prefWidth="702.0">
               <columns>
@@ -19,6 +20,7 @@
                   <TableColumn fx:id="DateColumn" prefWidth="80.2666015625" text="Date" />
               </columns>
             </TableView>
+            <TextField fx:id="txt" layoutX="147.0" layoutY="14.0" />
             </children>
         </AnchorPane>
         <Label layoutX="177.0" layoutY="4.0" text="Mospolytech quotes" textFill="WHITE">

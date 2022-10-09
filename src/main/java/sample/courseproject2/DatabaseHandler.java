@@ -36,4 +36,21 @@ public class DatabaseHandler {
         }
     }
 
+    public void AddQuote(String Quote,String Teacher,String lesson,String date ){
+        String insert = "INSERT INTO `quotes`(`quote`, `teacher_name`, `lesson`, `date`) VALUES (?,?,?,?)";
+        try {
+            Connection connection = getConnection();
+            PreparedStatement prSt = connection.prepareStatement(insert);
+
+            prSt.setString(1, Quote);
+            prSt.setString(2, Teacher);
+            prSt.setString(3, lesson);
+            prSt.setString(4, date);
+            prSt.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

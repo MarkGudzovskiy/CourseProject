@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: af4035;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.courseproject2.SignUpController">
     <children>
-        <AnchorPane fx:id="SignUpButton" layoutY="87.0" prefHeight="314.0" prefWidth="700.0" style="-fx-background-color: e3b5b1;">
+        <AnchorPane layoutY="87.0" prefHeight="314.0" prefWidth="700.0" style="-fx-background-color: e3b5b1;">
             <children>
                 <TextField fx:id="LogField" layoutX="154.0" layoutY="98.0" promptText="Login" style="-fx-background-color: FAFAFA; -fx-border-color: af4035; -fx-border-radius: 10; -fx-background-radius: 10;">
                <font>

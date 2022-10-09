@@ -1,12 +1,8 @@
 package sample.courseproject2;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-
-import java.io.IOException;
 
 public class MenuController {
 
@@ -17,29 +13,33 @@ public class MenuController {
     private Button QuotesButton;
 
     @FXML
-    private AnchorPane SignUpButton;
-
-    @FXML
     private Button UpdateData;
 
     @FXML
     private Button UpdateQuotesButton;
 
     @FXML
-    void initialize(){
-        QuotesButton.setOnAction(actionEvent -> {
-            System.out.println(1);
-            QuotesButton.getScene().getWindow().hide();
-            App.changeScene("QuotesWindow.fxml");
-        });
+    void AddQuotes(ActionEvent event) {
+        App.changeScene("AddQuotesWindow.fxml");
     }
-    public void getMenu(){
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("MenuWindow.fxml"));
-        try {
-            Scene scene = new Scene(fxmlLoader.load(), 700,400);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
+    @FXML
+    void Quotes(ActionEvent event) {
+        App.changeScene("QuotesWindow.fxml");
     }
+
+//    @FXML
+//    void initialize(){
+//        QuotesButton.setOnAction(actionEvent -> {
+//            System.out.println(1);
+////            QuotesButton.getScene().getWindow().hide();
+//            App.changeScene("QuotesWindow.fxml");
+//        });
+//
+//        AddQuotesButton.setOnAction(actionEvent -> {
+////            AddQuotesButton.getScene().getWindow().hide();
+//            App.changeScene("AddQuotesWindow.fxml");
+//        });
+//    }
+
 }
