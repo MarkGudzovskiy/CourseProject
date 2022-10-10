@@ -154,7 +154,24 @@ public class DatabaseHandler {
         }
     }
 
-    public void countQuotes(){
+    public ResultSet countQuotes(){
+        try {
+            Connection connection = getConnection();
 
+            String query = "SELECT COUNT(*) FROM quotes WHERE id_user = ?";
+
+            PreparedStatement statement = connection.prepareStatement(query);
+
+            statement.setInt(1, UserData.user.getId());
+
+            ResultSet result = statement.executeQuery();
+
+            connection.close();
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

@@ -20,21 +20,7 @@ public class App extends Application {
         stage.show();
     }
 
-//    public static Object changeScene(String fxml) {
-//        FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(App.class.getResource(fxml));
-//
-//        try {
-//            loader.load();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        Parent root = loader.getRoot();
-//        Stage stage = new Stage();
-//        stage.setScene(new Scene(root));
-//        stage.showAndWait();
-//        return null;
-//    }
+
     public static Object changeScene(String fxml) {
         try {
             FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml));

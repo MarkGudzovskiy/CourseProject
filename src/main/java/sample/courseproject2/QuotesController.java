@@ -52,6 +52,8 @@ public class QuotesController {
 
         });
         ReturnQuotes();
+        DatabaseHandler db = new DatabaseHandler();
+        System.out.println(db.countQuotes());
     }
 
     public void ReturnQuotes(){
